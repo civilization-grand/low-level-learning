@@ -1,0 +1,16 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# obsidian workspace specific files
+.obsidian/workspace.json
+.obsidian/appearance.json
+.obsidian/workspace-mobile.json
+
+# excalidraw autosave/backup
+.excalidraw.autosave.json
+.excalidraw.backup/
+
+# logs and cache
+.obsidian/cache/
+.obsidian/plugins/*/data.json
