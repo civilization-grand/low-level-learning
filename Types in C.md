@@ -1,11 +1,11 @@
 # Primitive Types
 
 ## char
-The smallest integer type, typically one byte. It's used to store single characters (like 'a') or small integers.
+A single byte, capable of holding one character in the local character set.
 **Size**: 1 byte
 
 ## int
-The platform's default, "most efficient" integer size.
+An integer, typically reflecting the natural size of integers on the host machine.
 **Size**: depends on the machine, it's most often `4 bytes` on a 32-bit as well as 64-bit systems
 
 ### short
@@ -14,6 +14,8 @@ A short integer.
 ### long (or `long int`)
 A long integer.
 **Size**: typically 8 bytes
+
+**NOTE:** There is a notation for octal and hexadecimal constants: a leading 0 (zero) on an `int` constant implies octal; a leading `0x` or `0X` indicates hexadecimal. For example, decimal 31 can be written as `037` in octal and `0x1f` or `0X1F` in hex. Hexadecimal and octal constants may also be followed by `L` to make them `long`.
 
 ## float
 Single-precision floating-point number.
