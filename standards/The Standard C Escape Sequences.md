@@ -1,4 +1,4 @@
-The C programming language uses **escape sequences** within character constants and string literals to represent characters that are non-printable, have a special meaning in C, or are defined by their numerical code. All C escape sequences begin with a **backslash** (\).
+The C programming language uses **escape sequences** within character constants and string literals to represent characters that are non-printable, have a special meaning in C, or are defined by their numerical code. All C escape sequences begin with a **backslash** (\\).
 
 | **Escape Sequence**    | **Description**         | **Represents**                                    | **ASCII Value (Hex)** |
 | ---------------------- | ----------------------- | ------------------------------------------------- | --------------------- |
