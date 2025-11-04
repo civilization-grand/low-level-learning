@@ -156,9 +156,9 @@ function swapNibbles(x) {
 
 
 ## Practice Exercises
-
 Want to test your understanding? Try these:
 1. Write a function to toggle the nth bit of a number
 2. Check if two numbers have opposite signs (without comparison operators)
 3. Find the only non-duplicate number in an array where every other number appears twice
 4. Reverse the bits of a 32-bit integer
+
