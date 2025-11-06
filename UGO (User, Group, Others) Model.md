@@ -91,28 +91,23 @@ This principle confirms that the ability to delete a file is not controlled by t
 
 ## III. Manipulating Permissions with `chmod`
 
-The `chmod` command is the primary utility used by the file owner or the root user to alter the permission mode of a file or directory.10 Permissions can be set using one of two primary methods: Absolute (Octal) mode or Symbolic mode.
+The `chmod` command is the primary utility used by the file owner or the root user to alter the permission mode of a file or directory. Permissions can be set using one of two primary methods: Absolute (Octal) mode or Symbolic mode.
 
 ### 3.1. Absolute (Octal) Mode: The Numeric Representation
 
-Absolute mode uses a numerical system, specifically an octal (base 8) three-digit number, to define the final, desired state of permissions for the UGO categories simultaneously.4 This method is highly favored for its efficiency and definitive nature.
+Absolute mode uses a numerical system, specifically an octal (base 8) three-digit number, to define the final, desired state of permissions for the UGO categories simultaneously. This method is highly favored for its efficiency and definitive nature.
 
 #### 3.1.1. Octal Value Assignment
 
 Each permission type is assigned a fixed numerical value based on powers of two:
 
 - Read ($r$) = 4
-    
 - Write ($w$) = 2
-    
 - Execute ($x$) = 1
-    
 
-These values are summed for each of the three UGO triplets to produce a digit between 0 and 7.3 The resulting three-digit number represents the permissions for the Owner, Group, and Others, listed from left to right.4
+These values are summed for each of the three UGO triplets to produce a digit between 0 and 7.3 The resulting three-digit number represents the permissions for the Owner, Group, and Others, listed from left to right.
 
 #### 3.1.2. Calculating Common Permissions
-
-Table Title
 
 |**Octal Digit**|**Permissions String**|**Access Description**|**Calculation**|
 |---|---|---|---|
@@ -124,24 +119,22 @@ Table Title
 
 #### 3.1.3. Practical Octal Examples
 
-To grant the Owner full access (7), the Group read and execute access (5), and Others only read access (4), the command would be `chmod 754 filename`. A common setting for web server executables or public scripts is `chmod 755`, granting the Owner full control, and Group/Others the ability to read and run the file.8 Conversely, `chmod 640 file1` provides Owner read/write, Group read-only, and denies all access to Others.3
+To grant the Owner full access (7), the Group read and execute access (5), and Others only read access (4), the command would be `chmod 754 filename`. A common setting for web server executables or public scripts is `chmod 755`, granting the Owner full control, and Group/Others the ability to read and run the file.8 Conversely, `chmod 640 file1` provides Owner read/write, Group read-only, and denies all access to Others.
 
 ### 3.2. Symbolic Mode: Human-Readable Modification
 
-Symbolic mode uses mnemonic letters and algebraic operators to modify permissions, often providing a more readable method for incremental changes.6
+Symbolic mode uses mnemonic letters and algebraic operators to modify permissions, often providing a more readable method for incremental changes.
 
 #### 3.2.1. Targets and Operators
 
 Symbolic mode utilizes specific characters to designate targets and actions:
 
-- **Targets:** `u` (user/owner), `g` (group), `o` (others), and `a` (all: $u$, $g$, and $o$).6 If no target is specified, the permission change often defaults to operating on all categories (`a`).21
-    
-- **Operators:** `+` (adds the permission), `-` (removes the permission), and `=` (sets the permission exactly, overriding any previous settings).20
-    
+- **Targets:** `u` (user/owner), `g` (group), `o` (others), and `a` (all: $u$, $g$, and $o$).6 If no target is specified, the permission change often defaults to operating on all categories (`a`).
+- **Operators:** `+` (adds the permission), `-` (removes the permission), and `=` (sets the permission exactly, overriding any previous settings).
 
 #### 3.2.2. Combining Operations in a Single Command
 
-Symbolic mode permits complex, simultaneous changes separated by commas. For example, `$ chmod g+w,o-rw,a+x ~/example-files/` adds write permission for the group, removes both read and write permissions from others, and ensures execute permission is applied to all three categories.21 Similarly, the octal equivalent of `chmod 764 file.sh` can be written symbolically as `chmod u=rwx,g=rw-,o=r-- file.sh`.22
+Symbolic mode permits complex, simultaneous changes separated by commas. For example, `$ chmod g+w,o-rw,a+x ~/example-files/` adds write permission for the group, removes both read and write permissions from others, and ensures execute permission is applied to all three categories. Similarly, the octal equivalent of `chmod 764 file.sh` can be written symbolically as `chmod u=rwx,g=rw-,o=r-- file.sh`.
 
 ## IV. Managing Ownership and Group Association
 
@@ -206,17 +199,17 @@ The rigid structure of the UGO model, which allows for only one Owner and one as
 
 ### 6.2. Introduction to ACLs and Granular Control
 
-POSIX ACLs serve as an extension to the standard permission system, allowing the definition of flexible, granular access rights on a per-user and per-group basis.28 They are particularly useful for environments requiring complex, multi-layered permissions, such as when migrating services from systems that support fine-grained access like Windows NTFS.29
+POSIX ACLs serve as an extension to the standard permission system, allowing the definition of flexible, granular access rights on a per-user and per-group basis. They are particularly useful for environments requiring complex, multi-layered permissions, such as when migrating services from systems that support fine-grained access like Windows NTFS.
 
-ACLs associate a list of entries with a file or directory, where each entry defines permissions for a specific user or group that falls outside the standard UGO categories.28
+ACLs associate a list of entries with a file or directory, where each entry defines permissions for a specific user or group that falls outside the standard UGO categories.
 
 ### 6.3. Viewing ACLs: The `getfacl` Command
 
-The `getfacl` command is used to display the detailed list of ACL entries for an object.28 The output not only lists the traditional Owner, Group, and Other entries but also enumerates explicit user or group entries that have been granted specific rights.28
+The `getfacl` command is used to display the detailed list of ACL entries for an object.28 The output not only lists the traditional Owner, Group, and Other entries but also enumerates explicit user or group entries that have been granted specific rights.
 
 ### 6.4. Modifying ACLs: The `setfacl` Command
 
-The `setfacl` utility manages the addition, modification, and removal of ACL entries.30
+The `setfacl` utility manages the addition, modification, and removal of ACL entries.
 
 #### Setting Permissions for Specific Users and Groups
 
