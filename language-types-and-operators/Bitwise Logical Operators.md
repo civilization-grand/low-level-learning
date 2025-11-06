@@ -162,3 +162,4 @@ Want to test your understanding? Try these:
 3. Find the only non-duplicate number in an array where every other number appears twice
 4. Reverse the bits of a 32-bit integer
 
+**Optional:** You can checkout the [[File System Permission]] on Linux and how it work.

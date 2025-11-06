@@ -12,3 +12,14 @@ These numbers are in the octal numbering system
 | 6          | 110    |  1  |  1  |  0  | Read and write           |
 | 7          | 111    |  1  |  1  |  1  | Read, write, and execute |
 
+## Permission Types
+
+
+## User Categories
+
+
+## Permission Representation
+
+
+## Managing Permissions
+
